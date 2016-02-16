@@ -12,11 +12,12 @@ import com.squareup.picasso.Picasso;
 
 public class DetailedImageActivity extends AppCompatActivity {
 
-    static final String IMAGE_URL = "imageUrl";
+    private static final String INTENT_PREFIX = "com.mapyo.detailedimage.";
+    private static final String EXTRA_IMAGE_URL = INTENT_PREFIX + "EXTRA_IMAGE_URL";
 
     public static void launchActivity(Context context, String imageUrl) {
         Intent intent = new Intent(context, DetailedImageActivity.class);
-        intent.putExtra(IMAGE_URL, imageUrl);
+        intent.putExtra(EXTRA_IMAGE_URL, imageUrl);
         context.startActivity(intent);
     }
 
@@ -30,7 +31,7 @@ public class DetailedImageActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Intent intent = getIntent();
-        String imageUrl = intent.getStringExtra(IMAGE_URL);
+        String imageUrl = intent.getStringExtra(EXTRA_IMAGE_URL);
 
         ImageView imageView = new ImageView(this);
         Picasso.with(this).load(imageUrl).into(imageView);
