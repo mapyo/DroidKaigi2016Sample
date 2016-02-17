@@ -10,3 +10,7 @@ https://github.com/mapyo/DroidKaigi2016Sample/tree/create-module
 
 #### ライブラリを使ったブランチ
 https://github.com/mapyo/DroidKaigi2016Sample/tree/use-liblary
+
+
+#### ライブラリとして公開しているブランチ
+https://github.com/mapyo/DetailedImage
