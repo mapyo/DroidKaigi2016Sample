@@ -8,16 +8,14 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
-
 public class DetailedImageActivity extends AppCompatActivity {
 
     private static final String INTENT_PREFIX = "com.mapyo.detailedimage.";
-    private static final String EXTRA_IMAGE_URL = INTENT_PREFIX + "EXTRA_IMAGE_URL";
+    private static final String EXTRA_IMAGE_ID = INTENT_PREFIX + "EXTRA_IMAGE_ID";
 
-    public static void launchActivity(Context context, String imageUrl) {
+    public static void launchActivity(Context context, int resId) {
         Intent intent = new Intent(context, DetailedImageActivity.class);
-        intent.putExtra(EXTRA_IMAGE_URL, imageUrl);
+        intent.putExtra(EXTRA_IMAGE_ID, resId);
         context.startActivity(intent);
     }
 
@@ -30,11 +28,10 @@ public class DetailedImageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detailed_image);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Intent intent = getIntent();
-        String imageUrl = intent.getStringExtra(EXTRA_IMAGE_URL);
+        int imageResId = getIntent().getIntExtra(EXTRA_IMAGE_ID, -1);
 
         ImageView imageView = new ImageView(this);
-        Picasso.with(this).load(imageUrl).into(imageView);
+        imageView.setImageResource(imageResId);
 
         FrameLayout frameLayout = (FrameLayout) findViewById(R.id.image_detail_layout);
         frameLayout.addView(imageView);
