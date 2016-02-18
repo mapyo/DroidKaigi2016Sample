@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.mapyo.detailedimage.DetailedImageActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     static final int imageResId = R.drawable.nyannyan;

@@ -1,4 +1,4 @@
-package com.mapyo.sample.droidkaigi2016sample;
+package com.mapyo.detailedimage;
 
 import android.content.Context;
 import android.content.Intent;
